@@ -22,6 +22,9 @@
 | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | <img src="screenshots/Screenshot 2022-07-19 at 12.40.47 PM.png" width="400"> | <img src="screenshots/Screenshot 2022-07-19 at 12.53.59 PM.png" width="400"> | <img src="screenshots/Screenshot 2022-07-19 at 12.41.10 PM.png" width="400"> |
 
+## Known Bugs 🐞
+
+- Win Line not placed in the correct place on different cases. (PRs are accepted to fix this bug) PR => Pull Requests
 
 ## Contact me 📧
 #### Email : khaledmuhmmed99@gmail.com
