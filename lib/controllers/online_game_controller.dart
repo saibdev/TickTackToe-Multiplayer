@@ -77,8 +77,9 @@ class RoomProvider extends GetConnect {
     while(_joinRoom == null) {
       await Future.delayed(const Duration(milliseconds: 500));
     }
+    _joinRoom = null;
+    
     if (_joinRoom['status'] == false) {
-      _joinRoom = null;
       throw Exception('Invalid room ID');
     }
     return MyInfoResponse.fromMap(_joinRoom);
