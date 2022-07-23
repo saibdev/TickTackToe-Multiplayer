@@ -8,6 +8,13 @@
 - Install the dependicies
 - Run it
 
+## Features 💡
+
+- Offline AI with (stupid - unbeatable) modes!
+- Offline and online multiplayer (Using python sockets)
+- Two themes
+- Only simple_websocket_server is required for python
+
 ## Preview 📸
 
 
