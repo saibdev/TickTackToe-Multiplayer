@@ -17,5 +17,5 @@
 
 
 ## Contact me 📧
-#### Email : mrbouaggadmoez@gmail.com
-#### Website : https://bouaggadmoez.netlify.com/
+#### Email : khaledmuhmmed99@gmail.com
+#### Website : https://eng-khalid-portfolio.netlify.app/
