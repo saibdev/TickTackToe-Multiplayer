@@ -1,17 +1,21 @@
-# tictactoe
+# Flutter Tricky Toe (Tic Tac Toe) Game 🎮 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-A new Flutter project.
+⭐️ the repo if you love it.
 
-## Getting Started
+## Getting Started 🚀
 
-This project is a starting point for a Flutter application.
+- Clone the repo
+- Install the dependicies
+- Run it
 
-A few resources to get you started if this is your first Flutter project:
+## Preview 📸
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# tricky-toe
+|                                           |                                           |                                           |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| <img src="screenshots/Screenshot 2022-07-19 at 12.40.47 PM.png" width="400"> | <img src="screenshots/2.jpg" width="400"> | <img src="screenshots/Screenshot 2022-07-19 at 12.41.10 PM.png" width="400"> |
+
+
+## Contact me 📧
+#### Email : mrbouaggadmoez@gmail.com
+#### Website : https://bouaggadmoez.netlify.com/
