@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
-    final SettingsController settingsController = Get.put<SettingsController>(SettingsController());
+    Get.put<SettingsController>(SettingsController());
 
     return GetMaterialApp(
       title: 'Tic Tac Toe',
