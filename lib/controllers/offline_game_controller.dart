@@ -253,7 +253,6 @@ class TacAI {
   /// This is where the actual Minimax algorithm is implemented
   Move _getBestMove(List<GameLetter> board, GameLetter currentPlayer) {
     // try all possible moves
-    List<int> newBoard;
     // will contain our next best score
     Move bestMove = Move(score: -10000, move: -1);
  
