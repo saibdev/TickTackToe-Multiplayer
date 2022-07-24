@@ -22,7 +22,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
-      JAVA_VERSION: "11.0"
+      JAVA_VERSION: "13.0"
       FLUTTER_VERSION: "3.0.5"
     steps:
       - uses: actions/checkout@v2
