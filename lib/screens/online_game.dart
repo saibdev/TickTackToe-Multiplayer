@@ -98,7 +98,7 @@ class _OnlineGameState extends State<OnlineGame> {
                                       children: [
                                         if (orientation ==
                                             Orientation.landscape)
-                                          Expanded(
+                                          const Expanded(
                                             flex: 1,
                                             child: SizedBox.shrink(),
                                           ),
@@ -132,7 +132,7 @@ class _OnlineGameState extends State<OnlineGame> {
                                                     ? null
                                                     : () =>
                                                         controller.resetBoard(),
-                                                child: Icon(
+                                                child: const Icon(
                                                     Ionicons.refresh_outline,
                                                     color: Colors.blueGrey),
                                               ),
@@ -273,7 +273,7 @@ class _WinLineState extends State<WinLine> with SingleTickerProviderStateMixin {
         ),
       );
     } else if (widget.winWay == WinWay.clockwiseWin) {
-      print(widget.to);
+      debugPrint(widget.to.toString());
       return CustomPaint(
         painter: MyPainter(
           p1: Offset(widget.to - 5, 20), // EdIT

@@ -1,5 +1,6 @@
 
 import 'package:get/get.dart';
+import 'package:tictactoe/helpers/debug_print.dart';
 import 'dart:math' as math;
 
 import 'package:tictactoe/models/tic_tac_toe.dart';
@@ -26,7 +27,7 @@ class GameController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    print("initALIZ");
+    debugPrint("initALIZ");
     board = _genBoard(3);
     playerTwo = playerOne == GameLetter.x? GameLetter.o : GameLetter.x;
     playedLast = GameLetter.values[math.Random().nextInt(2)];
@@ -57,7 +58,7 @@ class GameController extends GetxController {
       //print("ERROR");
     }
     bool isWinner = _checkWinner(r, i);
-    print("ME $isWinner");
+    debugPrint("ME $isWinner");
     if (isWinner) {
       score.addPoint(playedLast!);
       boardState = BoardState.done;
@@ -71,7 +72,7 @@ class GameController extends GetxController {
     update();
     if (mode == GameMode.ai) {
       Future.delayed(const Duration(milliseconds: 300)).then((value) {
-        print("bot turn");
+        debugPrint("bot turn");
         botMove();
       });
     }
@@ -112,7 +113,7 @@ class GameController extends GetxController {
 
 
     bool isWinner = _checkWinner(i, j);
-    print("BOT $isWinner");
+    debugPrint("BOT $isWinner");
     if (isWinner) {
       score.addPoint(playerTwo);
       boardState = BoardState.done;
@@ -205,20 +206,19 @@ class GameController extends GetxController {
 
 class TacAI {
   // evaluation condition values
-  static const int HUMAN = 1;
-  static const int AI_PLAYER = -1;
-  static const int NO_WINNERS_YET = 0;
-  static const int DRAW = 2;
+  static const int human = 1;
+  static const int aiPlayer = -1;
+  static const int noWinnersYet = 0;
+  static const int draw = 2;
  
-  static const int EMPTY_SPACE = 0;
-  static const SYMBOLS = {EMPTY_SPACE: "", HUMAN: "X", AI_PLAYER: "O"};
+  static const int emptySpace = 0;
  
   // arbitrary values for winning, draw and losing conditions
-  static const int WIN_SCORE = 100;
-  static const int DRAW_SCORE = 0;
-  static const int LOSE_SCORE = -100;
+  static const int winScore = 100;
+  static const int drawScore = 0;
+  static const int loseScore = -100;
  
-  static const WIN_CONDITIONS_LIST = [
+  static const winConditionsList = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -239,12 +239,12 @@ class TacAI {
   int? _getBestScore(List<GameLetter> board, GameLetter currentPlayer) {
     dynamic evaluation = TacUtility.evaluateBoard(board);
  
-    if (evaluation == currentPlayer) return WIN_SCORE;
+    if (evaluation == currentPlayer) return winScore;
  
-    if (evaluation == DRAW) return DRAW_SCORE;
+    if (evaluation == draw) return drawScore;
  
     if (evaluation == TacUtility.flipPlayer(currentPlayer)) {
-      return LOSE_SCORE;
+      return loseScore;
     }
  
     return _getBestMove(board, currentPlayer).score;
@@ -308,7 +308,7 @@ class TacUtility {
  
   /// Returns the current state of the board [winning player, draw or no winners yet]
   static dynamic evaluateBoard(List<GameLetter> board) {
-    for (var list in TacAI.WIN_CONDITIONS_LIST) {
+    for (var list in TacAI.winConditionsList) {
       if (board[list[0]] !=
               GameLetter.none && // if a player has played here AND
           board[list[0]] ==
@@ -319,10 +319,10 @@ class TacUtility {
     }
  
     if (isBoardFull(board)) {
-      return TacAI.DRAW;
+      return TacAI.draw;
     }
  
-    return TacAI.NO_WINNERS_YET;
+    return TacAI.noWinnersYet;
   }
  
   /// Returns the opposite player from the current one.

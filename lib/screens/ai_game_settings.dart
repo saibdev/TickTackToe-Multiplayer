@@ -25,9 +25,9 @@ class _GameSettingsState extends State<GameSettings> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 4),
-                child: const Center(
+              const Padding(
+                padding: EdgeInsets.only(top: 4),
+                child: Center(
                   child: Text(
                     "Pick your side",
                     style: TextStyle(
@@ -59,7 +59,7 @@ class _GameSettingsState extends State<GameSettings> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Expanded(
+                  const Expanded(
                     child: Center(
                       child: Text(
                         'Unbeatable AI',
@@ -86,7 +86,7 @@ class _GameSettingsState extends State<GameSettings> {
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Center(
                       child: Text(
                         'Stupid AI',

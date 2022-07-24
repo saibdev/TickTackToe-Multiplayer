@@ -129,7 +129,7 @@ class _MultiplayerOptionsState extends State<MultiplayerOptions> with SingleTick
                             widthFactor: 0.45,
                             child: TextButton(
                               onPressed: showOnlineOptions == false? null : () {
-                                print("Join Room");
+                                debugPrint("Join Room");
                                 setState(() {
                                   joinRoom = true;
                                 });
@@ -187,7 +187,7 @@ class _MultiplayerOptionsState extends State<MultiplayerOptions> with SingleTick
                                 TextButton(
                                   onPressed: () {
                                     serverConnection.joinRoom(roomIdController.value.text, Get.put(SettingsController()).nickName).then((value) {
-                                      print(value.player1Nickname);
+                                      debugPrint(value.player1Nickname);
                                       showTopSnackBar(
                                           context,
                                           const CustomSnackBar.success(
@@ -197,7 +197,7 @@ class _MultiplayerOptionsState extends State<MultiplayerOptions> with SingleTick
                                       );
                                       Get.to(() => OnlineGame(userInfo: value, roomServerProvider: serverConnection,));
                                     }).catchError((err) {
-                                      print(err);
+                                      debugPrint(err);
                                       showTopSnackBar(
                                           context,
                                           CustomSnackBar.error(
@@ -228,7 +228,7 @@ class _MultiplayerOptionsState extends State<MultiplayerOptions> with SingleTick
                         widthFactor: 0.45,
                         child: TextButton(
                           onPressed: showOnlineOptions == false? null : () {
-                            print("Create Room");
+                            debugPrint("Create Room");
                             Get.toNamed('/create_room');
                           },
                           style: TextButton.styleFrom(

@@ -58,7 +58,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             controller.setTheme('Default');
                           }
                         ),
-                        Text('Default'),
+                        const Text('Default'),
                         Radio(
                           value: 'Colorful',
                           groupValue: controller.theme,
@@ -66,7 +66,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             controller.setTheme('Colorful');
                           }
                         ),
-                        Text('Colorful'),
+                        const Text('Colorful'),
                       ],
                     ),
                   ],

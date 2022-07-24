@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:tictactoe/consts.dart';
+import 'package:tictactoe/helpers/debug_print.dart';
 import 'package:tictactoe/models/server.dart';
 
 import 'package:tictactoe/models/tic_tac_toe.dart';
@@ -10,7 +11,8 @@ class RoomProvider extends GetConnect {
   GetSocket ws = GetSocket(serverUrl, allowSelfSigned: false);
   bool socketConnected = false;
   String? _genRoomId;
-  var _joinRoom;
+  Map _joinRoom = {};
+  bool _joinRoomInit = false;
 
   Function(List<List<GameLetter>>, int r, int j)? setNewMove;
   Function(GameLetter playedLast)? setResetBoard;
@@ -29,8 +31,9 @@ class RoomProvider extends GetConnect {
           _genRoomId = data['room_id'].toString();
         } else if (type == 'join_room_status') {
           _joinRoom = data;
+          _joinRoomInit = true;
         } else if (type == 'room_joined_status') {
-          print(data);
+          debugPrint(data);
           onUserJoin!(MyInfoResponse.fromMap(data));
         } else if (type == 'set_new_move') {
           if (setNewMove != null) {
@@ -38,15 +41,15 @@ class RoomProvider extends GetConnect {
               return i.map<GameLetter>((j) => GameLetter.values.firstWhere((l) => l.name == j)).toList();
             }).toList()), data['r'], data['j']);
           } else {
-            print("IT IS STILL NULL !");
+            debugPrint("IT IS STILL NULL !");
           }
         } else if (type == 'reset_board') {
           if (setResetBoard != null) {
             setResetBoard!(GameLetter.values.firstWhere((element) => element.name == data['played_last']));
           }
         } else {
-          print(type); // Continue from here
-          print(data);
+          debugPrint(type); // Continue from here
+          debugPrint(data);
         }
 
         //print(val);
@@ -74,11 +77,11 @@ class RoomProvider extends GetConnect {
 
     ws.emit('join_room', {'id': id, 'nickname': nickname});
 
-    while(_joinRoom == null) {
+    while(_joinRoomInit == false) {
       await Future.delayed(const Duration(milliseconds: 500));
     }
-    _joinRoom = null;
-    
+    _joinRoomInit = false;
+
     if (_joinRoom['status'] == false) {
       throw Exception('Invalid room ID');
     }
@@ -133,7 +136,7 @@ class OnlineGameController extends GetxController {
       update();
     });
 
-    print("initALIZ");
+    debugPrint("initALIZ");
     board = _genBoard(3);
     playerTwo = playerOne == GameLetter.x? GameLetter.o : GameLetter.x;
     //playedLast = GameLetter.values[math.Random().nextInt(2)];

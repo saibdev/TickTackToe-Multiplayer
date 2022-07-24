@@ -86,7 +86,7 @@ class _GameState extends State<Game> {
                                     child: Row(
                                       children: [
                                         if (orientation == Orientation.landscape)
-                                        Expanded(
+                                        const Expanded(
                                           flex: 1,
                                           child: SizedBox.shrink(),
                                         ),
@@ -111,7 +111,7 @@ class _GameState extends State<Game> {
                                             opacity: controller.boardState == BoardState.playing ? 0 : 1,
                                             child: InkWell(
                                               onTap: controller.boardState == BoardState.playing? null : () => controller.resetBoard(),
-                                              child: Icon(Ionicons.refresh_outline, color: Colors.blueGrey),
+                                              child: const Icon(Ionicons.refresh_outline, color: Colors.blueGrey),
                                             ),
                                           ),
                                         ),

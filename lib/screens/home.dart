@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Padding(
-                    padding: orientation == Orientation.portrait? const EdgeInsets.all(30) : EdgeInsets.symmetric(horizontal: 150),
+                    padding: orientation == Orientation.portrait? const EdgeInsets.all(30) : const EdgeInsets.symmetric(horizontal: 150),
                     child: Center(
                       child: GetBuilder<SettingsController>(
                         init: SettingsController(),
@@ -35,9 +35,9 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
                       'Choose your playing mode',
                       style: TextStyle(
                         color: Colors.blueGrey,

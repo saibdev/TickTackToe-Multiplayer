@@ -9,7 +9,7 @@ class Board extends StatefulWidget {
   final WinWay lastWinWay;
   final Function(int j, int i) newMove;
 
-  Board({Key? key, required this.board, required this.dimension, required this.boardState, required this.lastWinWay, required this.newMove}) : super(key: key);
+  const Board({Key? key, required this.board, required this.dimension, required this.boardState, required this.lastWinWay, required this.newMove}) : super(key: key);
 
   @override
   State<Board> createState() => _BoardState();
@@ -38,7 +38,7 @@ class _BoardState extends State<Board> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
               ),
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                   decoration: BoxDecoration(
