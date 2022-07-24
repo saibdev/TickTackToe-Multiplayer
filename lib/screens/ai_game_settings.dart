@@ -62,7 +62,7 @@ class _GameSettingsState extends State<GameSettings> {
                   const Expanded(
                     child: Center(
                       child: Text(
-                        'Unbeatable AI',
+                        'Unbeatable  AI',
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.blueGrey,
