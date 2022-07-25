@@ -49,7 +49,6 @@ class _HomeState extends State<Home> {
                   Flex(
                     direction: orientation == Orientation.portrait? Axis.vertical : Axis.horizontal,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    //mainAxisSize: MainAxisSize.min,
                     children: [
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4, vertical: orientation == Orientation.portrait? 7.5 : 0),
