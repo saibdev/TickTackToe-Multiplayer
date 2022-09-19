@@ -25,7 +25,3 @@
 ## Known Bugs 🐞
 
 - Win Line not placed in the correct place on different cases. (PRs are accepted to fix this bug) PR => Pull Requests
-
-## Contact me 📧
-#### Email : khaledmuhmmed99@gmail.com
-#### Website : https://eng-khalid-portfolio.netlify.app/
